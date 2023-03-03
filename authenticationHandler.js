@@ -8,9 +8,6 @@ class AuthenticationHandler extends RequestHandler {
             request.password != 'password')
             return new Response(false, 'Invalid username or password.');
 
-        if (this.successor)
-            return this.successor.handleRequest(request);
-
         return new Response(true, 'Authentication successful.');
     }
 }

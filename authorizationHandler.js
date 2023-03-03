@@ -8,9 +8,6 @@ class AuthorizationHandler extends RequestHandler {
         if (request.role != 'Admin')
             return new Response(false, 'User not authorized.');
 
-        if (this.successor)
-            return this.successor.handleRequest(request);
-
         return new Response(true, 'Authorization successful.');
     }
 }
